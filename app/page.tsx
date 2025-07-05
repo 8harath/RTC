@@ -1,20 +1,18 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import {
-  Menu,
-  X,
   ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
   Building,
   Home,
   Hotel,
   Palette,
   TrendingUp,
   CheckCircle,
+  Phone,
+  Mail,
+  MapPin,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -23,17 +21,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import Image from "next/image"
+import Link from "next/link"
 
-export default function RTCLandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [loanAmount, setLoanAmount] = useState([5000000])
   const [interestRate, setInterestRate] = useState([8.5])
   const [loanTenure, setLoanTenure] = useState([20])
   const [emi, setEmi] = useState(0)
-
-  const { scrollY } = useScroll()
-  const headerOpacity = useTransform(scrollY, [0, 100], [0, 1])
 
   // EMI Calculation
   useEffect(() => {
@@ -111,87 +106,6 @@ export default function RTCLandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
-      {/* Navigation */}
-      <motion.header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        style={{
-          backgroundColor: useTransform(scrollY, [0, 100], ["transparent", "rgba(245, 245, 220, 0.95)"]),
-        }}
-      >
-        <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-800 to-orange-600 rounded-lg flex items-center justify-center">
-                <Building className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-orange-800">RTC</span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-orange-800 transition-colors">
-                Home
-              </a>
-              <a href="#projects" className="text-gray-700 hover:text-orange-800 transition-colors">
-                Projects
-              </a>
-              <a href="#listings" className="text-gray-700 hover:text-orange-800 transition-colors">
-                Listings
-              </a>
-              <a href="#news" className="text-gray-700 hover:text-orange-800 transition-colors">
-                News
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-orange-800 transition-colors">
-                About
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-orange-800 transition-colors">
-                Contact
-              </a>
-            </div>
-
-            <div className="hidden md:block">
-              <Button className="bg-orange-800 hover:bg-orange-700 text-white">Get Quote</Button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </nav>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-white border-t shadow-lg"
-          >
-            <div className="container mx-auto px-4 py-4 space-y-4">
-              <a href="#home" className="block text-gray-700 hover:text-orange-800">
-                Home
-              </a>
-              <a href="#projects" className="block text-gray-700 hover:text-orange-800">
-                Projects
-              </a>
-              <a href="#listings" className="block text-gray-700 hover:text-orange-800">
-                Listings
-              </a>
-              <a href="#news" className="block text-gray-700 hover:text-orange-800">
-                News
-              </a>
-              <a href="#about" className="block text-gray-700 hover:text-orange-800">
-                About
-              </a>
-              <a href="#contact" className="block text-gray-700 hover:text-orange-800">
-                Contact
-              </a>
-              <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">Get Quote</Button>
-            </div>
-          </motion.div>
-        )}
-      </motion.header>
-
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -253,16 +167,20 @@ export default function RTCLandingPage() {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <Button size="lg" className="bg-orange-800 hover:bg-orange-700 text-white px-8">
-                Explore Projects <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
-              >
-                Contact Us
-              </Button>
+              <Link href="/projects">
+                <Button size="lg" className="bg-orange-800 hover:bg-orange-700 text-white px-8">
+                  Explore Projects <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Client Logos */}
@@ -343,9 +261,11 @@ export default function RTCLandingPage() {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                      <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
-                        View Details
-                      </Button>
+                      <Link href="/projects">
+                        <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
+                          View Details
+                        </Button>
+                      </Link>
                     </div>
                     <Badge className="absolute top-4 right-4 bg-orange-800 text-white">{project.status}</Badge>
                   </div>
@@ -785,74 +705,6 @@ export default function RTCLandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-800 to-orange-600 rounded-lg flex items-center justify-center">
-                  <Building className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-bold">RTC</span>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Building dreams and crafting excellence since 2021. Your trusted construction partner in Bangalore.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Residential Construction</li>
-                <li>Industrial Construction</li>
-                <li>Hospitality Construction</li>
-                <li>Interior Works</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#projects" className="hover:text-white transition-colors">
-                    Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#listings" className="hover:text-white transition-colors">
-                    Listings
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Bangalore, Karnataka</li>
-                <li>+91 [Phone Number]</li>
-                <li>info@rtconstructions.com</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Ravitaj Constructions (RTC). All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

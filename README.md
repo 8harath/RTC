@@ -51,6 +51,7 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 - Breadcrumb navigation for better UX
 - Shared Header and Footer components
 - SEO-optimized page structure
+- Compact footer design with essential information
 
 ## 🚀 Tech Stack
 

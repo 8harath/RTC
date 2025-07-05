@@ -3,6 +3,7 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Toaster } from '@/components/ui/toaster'
+import { LoadingProvider } from '@/components/ui/loading-provider'
 
 export const metadata: Metadata = {
   title: 'RTC Constructions - Premium Construction Company in Bangalore',
@@ -34,12 +35,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="pt-16">
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
+        <LoadingProvider>
+          <Header />
+          <main className="pt-16">
+            {children}
+          </main>
+          <Footer />
+          <Toaster />
+        </LoadingProvider>
       </body>
     </html>
   )

@@ -34,6 +34,8 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 - Mobile-first approach
 - Improved color contrast for accessibility
 - Enhanced dropdown menus with better visibility
+- Construction-themed loading animations
+- Page transition loading states
 
 ### 🎨 Component Library
 - Built with Shadcn/UI components
@@ -93,10 +95,11 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 │   ├── properties/        # Property listings page
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout with Header/Footer
+│   ├── loading.tsx        # Global loading UI
 │   └── page.tsx          # Home page (RTC Landing)
 ├── components/            # React components
 │   ├── layout/           # Layout components (Header, Footer, Breadcrumb)
-│   ├── ui/               # Shadcn/UI components + EMI Calculator
+│   ├── ui/               # Shadcn/UI + Custom components (EMI Calculator, Loading)
 │   └── theme-provider.tsx # Theme configuration
 ├── hooks/                # Custom React hooks
 ├── lib/                  # Utility functions
@@ -202,6 +205,15 @@ pnpm lint     # Run ESLint
 - Scroll-based animations
 - Smooth transitions
 - Interactive hover effects
+- Construction-themed loading screens
+- Page transition animations
+
+### 6. Loading Experience
+- Initial app loading with building construction animation
+- Page transition loading states
+- Construction tools animated elements
+- Progress indicators with construction theme
+- Floating particle effects
 
 ## 🚀 Deployment
 

@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Slider } from "@/components/ui/slider"
 import { Separator } from "@/components/ui/separator"
+import { EMICalculator } from "@/components/ui/emi-calculator"
 import Image from "next/image"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 
@@ -491,6 +492,16 @@ export default function PropertiesPage() {
             </Button>
           </motion.div>
         )}
+
+        {/* EMI Calculator */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <EMICalculator />
+        </motion.div>
 
         {/* CTA Section */}
         <motion.div

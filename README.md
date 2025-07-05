@@ -21,8 +21,11 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 
 ### 💰 EMI Calculator
 - Real-time EMI calculation based on loan amount, interest rate, and tenure
-- Interactive sliders for easy parameter adjustment
-- Instant results display
+- Interactive sliders with manual input fields for precise control
+- Instant results display with detailed breakdown
+- Improved color contrast for better accessibility
+- Additional metrics like monthly income needed and loan-to-value ratio
+- Reusable component available across multiple pages
 
 ### 📱 Modern UI/UX
 - Fully responsive design for all devices
@@ -35,6 +38,13 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 - Consistent design system
 - Reusable UI components
 - Accessible and modern interface
+
+### 🧭 Multi-Page Architecture
+- Dedicated pages for Projects, Properties, About, Contact, and Blog
+- Next.js App Router with proper routing
+- Breadcrumb navigation for better UX
+- Shared Header and Footer components
+- SEO-optimized page structure
 
 ## 🚀 Tech Stack
 
@@ -72,11 +82,17 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 
 ```
 ├── app/                    # Next.js App Router
+│   ├── about/             # About page
+│   ├── blog/              # Blog/News page
+│   ├── contact/           # Contact page
+│   ├── projects/          # Projects showcase page
+│   ├── properties/        # Property listings page
 │   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
+│   ├── layout.tsx         # Root layout with Header/Footer
 │   └── page.tsx          # Home page (RTC Landing)
 ├── components/            # React components
-│   ├── ui/               # Shadcn/UI components
+│   ├── layout/           # Layout components (Header, Footer, Breadcrumb)
+│   ├── ui/               # Shadcn/UI components + EMI Calculator
 │   └── theme-provider.tsx # Theme configuration
 ├── hooks/                # Custom React hooks
 ├── lib/                  # Utility functions

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import {
   ArrowRight,
@@ -20,24 +20,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
+import { EMICalculator } from "@/components/ui/emi-calculator"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("all")
-  const [loanAmount, setLoanAmount] = useState([5000000])
-  const [interestRate, setInterestRate] = useState([8.5])
-  const [loanTenure, setLoanTenure] = useState([20])
-  const [emi, setEmi] = useState(0)
-
-  // EMI Calculation
-  useEffect(() => {
-    const P = loanAmount[0]
-    const r = interestRate[0] / 12 / 100
-    const n = loanTenure[0] * 12
-    const emiValue = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
-    setEmi(Math.round(emiValue))
-  }, [loanAmount, interestRate, loanTenure])
 
   const projects = [
     {
@@ -350,78 +338,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-2xl p-8"
           >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Home Loan EMI Calculator</h3>
-              <p className="text-gray-600">Calculate your monthly EMI with our interactive tool</p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Loan Amount: ₹{loanAmount[0].toLocaleString()}
-                  </label>
-                  <Slider
-                    value={loanAmount}
-                    onValueChange={setLoanAmount}
-                    max={10000000}
-                    min={100000}
-                    step={100000}
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Interest Rate: {interestRate[0]}%
-                  </label>
-                  <Slider
-                    value={interestRate}
-                    onValueChange={setInterestRate}
-                    max={15}
-                    min={6}
-                    step={0.1}
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Loan Tenure: {loanTenure[0]} Years
-                  </label>
-                  <Slider
-                    value={loanTenure}
-                    onValueChange={setLoanTenure}
-                    max={30}
-                    min={1}
-                    step={1}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-orange-800 mb-2">₹{emi.toLocaleString()}</div>
-                  <div className="text-gray-600">Monthly EMI</div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Total Interest:</span>
-                    <span className="font-semibold">
-                      ₹{(emi * loanTenure[0] * 12 - loanAmount[0]).toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Total Amount:</span>
-                    <span className="font-semibold">₹{(emi * loanTenure[0] * 12).toLocaleString()}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <EMICalculator />
           </motion.div>
         </div>
       </section>

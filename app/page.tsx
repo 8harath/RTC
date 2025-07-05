@@ -194,9 +194,9 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Building Dreams,
+              Inspired by you.
               <br />
-              <span className="text-orange-400">Crafting Excellence</span>
+              <span className="text-orange-400">Engineered by us.</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               Premium construction solutions across residential, industrial, and hospitality sectors since 2021

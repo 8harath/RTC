@@ -1,45 +1,38 @@
-import { Building, Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gray-50 border-t border-gray-200 py-12">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8 mb-6">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 relative bg-white rounded-md p-1">
-                <Image
-                  src="/RTC Logo_page-0001.jpg"
-                  alt="RTC Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-lg font-bold">RTC</span>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Excellence in Construction Since 2021
+          <div className="md:col-span-2">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Ravi Tej Constructions</h3>
+            <p className="text-gray-600 mb-4 max-w-md">
+              Building excellence since 2021. Premium construction solutions across residential, 
+              industrial, and hospitality sectors in Bangalore.
             </p>
+            <div className="text-sm text-gray-500">
+              <span>Residential • Industrial • Hospitality • Interiors</span>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-3 text-sm">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
+            <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
+            <div className="space-y-2">
+              <Link href="/projects" className="block text-gray-600 hover:text-orange-800 transition-colors">
                 Projects
               </Link>
-              <Link href="/properties" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/properties" className="block text-gray-600 hover:text-orange-800 transition-colors">
                 Properties
               </Link>
-              <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/about" className="block text-gray-600 hover:text-orange-800 transition-colors">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/contact" className="block text-gray-600 hover:text-orange-800 transition-colors">
                 Contact
               </Link>
             </div>
@@ -47,36 +40,37 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-3 text-sm">Get in Touch</h4>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center space-x-2 text-gray-400">
-                <MapPin className="w-3 h-3" />
-                <span>Bangalore, Karnataka</span>
+            <h4 className="font-semibold text-gray-900 mb-4">Contact</h4>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3 text-gray-600">
+                <MapPin className="w-4 h-4 mt-0.5 text-orange-800" />
+                <span className="text-sm">Bangalore, Karnataka</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Phone className="w-3 h-3" />
-                <span>+91 [Phone Number]</span>
+              <div className="flex items-center space-x-3 text-gray-600">
+                <Phone className="w-4 h-4 text-orange-800" />
+                <span className="text-sm">+91 [Phone Number]</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Mail className="w-3 h-3" />
-                <span>info@rtconstructions.com</span>
+              <div className="flex items-center space-x-3 text-gray-600">
+                <Mail className="w-4 h-4 text-orange-800" />
+                <span className="text-sm">info@ravitejconstructions.com</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-4">
-          <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Ravitej Constructions (RTC). All rights reserved.</p>
-            <div className="flex space-x-4 mt-2 md:mt-0">
-              <span className="text-gray-500">Residential</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-500">Industrial</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-500">Hospitality</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-500">Interiors</span>
+        <div className="border-t border-gray-200 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} Ravi Tej Constructions. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link href="/privacy" className="text-sm text-gray-500 hover:text-orange-800 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-sm text-gray-500 hover:text-orange-800 transition-colors">
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>

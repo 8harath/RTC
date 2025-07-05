@@ -7,12 +7,7 @@ export function LoadingScreen() {
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
       <div className="text-center">
-        {/* Company Name - Static, no animation */}
-        <h1 className="text-4xl font-bold text-orange-800 mb-12">
-          Ravi Tej Constructions
-        </h1>
-
-        {/* Construction Animation - Below the text */}
+        {/* Construction Animation - At the top */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -122,7 +117,7 @@ export function LoadingScreen() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 2.1 }}
-          className="w-64 mx-auto"
+          className="w-64 mx-auto mb-8"
         >
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
             <motion.div
@@ -137,6 +132,11 @@ export function LoadingScreen() {
             />
           </div>
         </motion.div>
+
+        {/* Company Name - Static at the bottom */}
+        <h1 className="text-4xl font-bold text-orange-800">
+          Ravi Tej Constructions
+        </h1>
 
         {/* Floating particles for construction effect */}
         <div className="absolute inset-0 pointer-events-none">

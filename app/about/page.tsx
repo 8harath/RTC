@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Building, Users, Award, Clock, CheckCircle, Target, Shield, Lightbulb } from "lucide-react"
+import { Building, Award, Clock, Target, Shield, Lightbulb } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
@@ -19,7 +19,7 @@ export default function AboutPage() {
     })
   }
   const milestones = [
-    { year: "2021", event: "RTC Founded", description: "Started with a vision to deliver premium construction solutions" },
+    { year: "2021", event: "Ravi Tej Constructions Founded", description: "Started with a vision to deliver premium construction solutions" },
     { year: "2022", event: "First Major Project", description: "Completed our first industrial manufacturing facility" },
     { year: "2023", event: "Residential Excellence", description: "Delivered luxury residential complex in Whitefield" },
     { year: "2024", event: "Hospitality Venture", description: "Entered hospitality sector with boutique hotel project" },
@@ -38,7 +38,7 @@ export default function AboutPage() {
       description: "We respect deadlines and ensure all projects are completed on time without compromising quality."
     },
     {
-      icon: Users,
+      icon: Building,
       title: "Customer First",
       description: "Our customers are at the heart of everything we do. We build relationships, not just structures."
     },
@@ -47,45 +47,6 @@ export default function AboutPage() {
       title: "Innovation",
       description: "We embrace new technologies and innovative construction methods to deliver superior results."
     }
-  ]
-
-  const team = [
-    {
-      name: "Ravitej Kumar",
-      role: "Founder & CEO",
-      experience: "15+ years",
-      specialization: "Construction Management",
-      image: "/placeholder-user.jpg"
-    },
-    {
-      name: "Priya Sharma",
-      role: "Chief Architect",
-      experience: "12+ years",
-      specialization: "Sustainable Design",
-      image: "/placeholder-user.jpg"
-    },
-    {
-      name: "Rajesh Patel",
-      role: "Project Manager",
-      experience: "10+ years",
-      specialization: "Industrial Construction",
-      image: "/placeholder-user.jpg"
-    },
-    {
-      name: "Anita Reddy",
-      role: "Interior Designer",
-      experience: "8+ years",
-      specialization: "Commercial Interiors",
-      image: "/placeholder-user.jpg"
-    }
-  ]
-
-  const certifications = [
-    "ISO 9001:2015 Quality Management",
-    "LEED Green Building Certification",
-    "OSHA Safety Standards Compliance",
-    "Bureau of Indian Standards (BIS) Certification",
-    "RERA Registration"
   ]
 
   return (
@@ -102,9 +63,14 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">About RTC</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">About Ravi Tej Constructions</h1>
+          <div className="mb-6">
+            <p className="text-2xl font-medium text-orange-800 mb-4 italic">
+              "Inspired by you. Engineered by us."
+            </p>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Since 2021, Ravitej Constructions has been at the forefront of premium construction solutions, 
+            Since 2021, Ravi Tej Constructions has been at the forefront of premium construction solutions, 
             delivering excellence across residential, industrial, hospitality, and interior design sectors.
           </p>
         </motion.div>
@@ -122,7 +88,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-600">
                 <p>
                   Founded in 2021 with a vision to transform the construction landscape in Bangalore, 
-                  RTC has grown from a small team with big dreams to a trusted name in premium construction.
+                  Ravi Tej Constructions has grown from a small team with big dreams to a trusted name in premium construction.
                 </p>
                 <p>
                   Our journey began with a simple belief: that every structure we build should be a 
@@ -138,7 +104,7 @@ export default function AboutPage() {
             <div className="relative">
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="RTC Construction Team"
+                alt="Ravi Tej Constructions Team"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-lg"
@@ -249,71 +215,11 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* Team Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Meet Our Team</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-              >
-                <Card className="text-center border-orange-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
-                  <CardContent className="p-6">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={96}
-                        height={96}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{member.name}</h3>
-                    <p className="text-orange-600 font-medium mb-2">{member.role}</p>
-                    <p className="text-sm text-gray-600 mb-1">{member.experience}</p>
-                    <p className="text-sm text-gray-500">{member.specialization}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Certifications */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Certifications & Compliance</h2>
-          <Card className="border-orange-100">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{cert}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.section>
-
         {/* CTA Section */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.5 }}
           className="text-center bg-gradient-to-r from-orange-800 to-orange-700 rounded-2xl p-12 text-white"
         >
           <h2 className="text-3xl font-bold mb-4">Ready to Build with Us?</h2>

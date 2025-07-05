@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -22,10 +22,6 @@ export function Footer() {
               <div className="flex items-start space-x-3 text-gray-600">
                 <MapPin className="w-4 h-4 mt-0.5 text-orange-800" />
                 <span className="text-sm">Bangalore, Karnataka</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-600">
-                <Phone className="w-4 h-4 text-orange-800" />
-                <span className="text-sm">+91 [Phone Number]</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Mail className="w-4 h-4 text-orange-800" />

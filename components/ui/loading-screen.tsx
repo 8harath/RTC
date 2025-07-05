@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Building, Hammer, HardHat } from "lucide-react"
+import { useLoading } from "./loading-provider"
 
 export function LoadingScreen() {
+  const { progress } = useLoading()
+  
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
       <div className="text-center">
@@ -112,24 +115,26 @@ export function LoadingScreen() {
           </motion.div>
         </motion.div>
 
-        {/* Progress Bar */}
+        {/* Progress Bar - Now functional */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 2.1 }}
+          transition={{ duration: 0.6, delay: 1.8 }}
           className="w-64 mx-auto mb-8"
         >
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
+              animate={{ width: `${progress}%` }}
               transition={{ 
-                duration: 2.0,
-                delay: 2.3,
+                duration: 0.3,
                 ease: "easeInOut"
               }}
               className="h-full bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
             />
+          </div>
+          <div className="mt-2 text-sm text-gray-600 font-medium">
+            {progress}%
           </div>
         </motion.div>
 

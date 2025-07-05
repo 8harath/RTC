@@ -6,6 +6,7 @@ import { LoadingScreen } from "./loading-screen"
 interface LoadingContextType {
   isLoading: boolean
   setIsLoading: (loading: boolean) => void
+  progress: number
 }
 
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined)
@@ -30,23 +31,46 @@ export function LoadingProvider({
   minLoadingTime = 2000 
 }: LoadingProviderProps) {
   const [isLoading, setIsLoading] = useState(initialLoading)
+  const [progress, setProgress] = useState(0)
   const [hasMinimumTimePassed, setHasMinimumTimePassed] = useState(false)
 
   useEffect(() => {
-    // Ensure minimum loading time for better UX
+    if (!initialLoading) return
+
+    // Simulate progressive loading
+    const intervals = [
+      { time: 100, progress: 10 },
+      { time: 300, progress: 25 },
+      { time: 600, progress: 40 },
+      { time: 900, progress: 60 },
+      { time: 1200, progress: 75 },
+      { time: 1500, progress: 85 },
+      { time: 1800, progress: 95 },
+      { time: minLoadingTime, progress: 100 }
+    ]
+
+    intervals.forEach(({ time, progress: targetProgress }) => {
+      setTimeout(() => {
+        setProgress(targetProgress)
+      }, time)
+    })
+
+    // Ensure minimum loading time
     const timer = setTimeout(() => {
       setHasMinimumTimePassed(true)
     }, minLoadingTime)
 
     return () => clearTimeout(timer)
-  }, [minLoadingTime])
+  }, [minLoadingTime, initialLoading])
 
   useEffect(() => {
-    // Auto-hide loading after minimum time
-    if (initialLoading && hasMinimumTimePassed) {
-      setIsLoading(false)
+    // Auto-hide loading after minimum time and when progress is complete
+    if (initialLoading && hasMinimumTimePassed && progress >= 100) {
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 300) // Small delay after reaching 100%
     }
-  }, [hasMinimumTimePassed, initialLoading])
+  }, [hasMinimumTimePassed, initialLoading, progress])
 
   const contextValue = {
     isLoading,
@@ -57,7 +81,8 @@ export function LoadingProvider({
       } else {
         setIsLoading(loading)
       }
-    }
+    },
+    progress
   }
 
   return (

@@ -363,76 +363,7 @@ export default function HomePage() {
       </section>
 
       {/* Listings Section */}
-      <section id="listings" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Property Listings</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover your dream property with our premium listings
-            </p>
-          </motion.div>
-
-          {/* Properties Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {properties.map((property, index) => (
-              <motion.div
-                key={property.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 border-orange-100">
-                  <div className="relative">
-                    <Image
-                      src={property.image || "/placeholder.svg"}
-                      alt={property.title}
-                      width={350}
-                      height={250}
-                      className="w-full h-48 object-cover"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-orange-800 text-white">{property.badge}</Badge>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{property.title}</h3>
-                    <p className="text-orange-600 font-medium mb-4">{property.location}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {property.specs.map((spec, i) => (
-                        <Badge key={i} variant="outline" className="border-orange-200 text-orange-800">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div className="flex justify-between items-center mb-4">
-                      <div>
-                        <div className="text-2xl font-bold text-gray-900">{property.price}</div>
-                        <div className="text-sm text-gray-600">{property.pricePerSqft}</div>
-                      </div>
-                      <Button className="bg-orange-800 hover:bg-orange-700 text-white">Enquire Now</Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* EMI Calculator */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <EMICalculator />
-          </motion.div>
-        </div>
-      </section>
+      {/* Listings Section Removed as per request */}
 
       {/* News & Articles Section */}
       <section id="news" className="py-20 bg-gradient-to-b from-orange-50/30 to-white">

@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 
 export function PageLoader() {
   return (
@@ -16,15 +15,8 @@ export function PageLoader() {
             rotate: { duration: 2, repeat: Infinity, ease: "linear" },
             scale: { duration: 1, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="w-16 h-16 relative bg-white rounded-lg p-3 shadow-lg mx-auto mb-4"
-        >
-          <Image
-            src="/RTC Logo_page-0001.jpg"
-            alt="RTC Logo"
-            fill
-            className="object-contain"
-          />
-        </motion.div>
+          className="w-16 h-16 border-4 border-gray-200 border-t-orange-600 rounded-full mx-auto mb-4"
+        />
         
         <motion.div
           initial={{ opacity: 0 }}

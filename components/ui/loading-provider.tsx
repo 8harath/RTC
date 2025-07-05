@@ -27,7 +27,7 @@ interface LoadingProviderProps {
 export function LoadingProvider({ 
   children, 
   initialLoading = true,
-  minLoadingTime = 3000 
+  minLoadingTime = 2000 
 }: LoadingProviderProps) {
   const [isLoading, setIsLoading] = useState(initialLoading)
   const [hasMinimumTimePassed, setHasMinimumTimePassed] = useState(false)
@@ -62,8 +62,11 @@ export function LoadingProvider({
 
   return (
     <LoadingContext.Provider value={contextValue}>
-      {isLoading && <LoadingScreen />}
-      {children}
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        children
+      )}
     </LoadingContext.Provider>
   )
 }

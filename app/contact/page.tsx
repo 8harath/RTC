@@ -18,7 +18,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     projectType: "",
     message: "",
     budget: "",
@@ -41,7 +40,6 @@ export default function ContactPage() {
     setFormData({
       name: "",
       email: "",
-      phone: "",
       projectType: "",
       message: "",
       budget: "",
@@ -57,22 +55,10 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: "Phone",
-      details: ["+91 98765 43210", "+91 80 2345 6789"],
-      description: "Mon-Sat, 9:00 AM - 6:00 PM"
-    },
-    {
       icon: Mail,
       title: "Email",
       details: ["info@ravitejconstructions.com", "projects@ravitejconstructions.com"],
       description: "We'll respond within 24 hours"
-    },
-    {
-      icon: MapPin,
-      title: "Address",
-      details: ["123 Construction Plaza", "Koramangala, Bangalore - 560034"],
-      description: "Visit our office for consultation"
     },
     {
       icon: Clock,
@@ -174,19 +160,6 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <Input
-                        type="tel"
-                        placeholder="Enter your phone number"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
-                        required
-                        className="border-orange-200 focus:border-orange-500"
-                      />
-                    </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Project Type *
@@ -316,10 +289,6 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">Need Immediate Assistance?</h3>
                 <div className="space-y-3">
-                  <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
                   <Button variant="outline" className="w-full border-orange-300 text-orange-800 hover:bg-orange-50">
                     <Building className="w-4 h-4 mr-2" />
                     Schedule Site Visit
@@ -351,34 +320,11 @@ export default function ContactPage() {
           </motion.div>
         </div>
 
-        {/* Map Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-16"
-        >
-          <Card className="border-orange-100 overflow-hidden">
-            <CardHeader>
-              <CardTitle className="text-2xl text-gray-900">Visit Our Office</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <MapPin className="w-12 h-12 mx-auto mb-4" />
-                  <p>Interactive Map Coming Soon</p>
-                  <p className="text-sm">123 Construction Plaza, Koramangala, Bangalore - 560034</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
         {/* FAQ Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.3 }}
           className="mt-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h2>

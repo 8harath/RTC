@@ -10,7 +10,6 @@ import {
   Palette,
   TrendingUp,
   CheckCircle,
-  Phone,
   Mail,
   MapPin,
 } from "lucide-react"
@@ -31,11 +30,9 @@ export default function HomePage() {
   const [newsletterEmail, setNewsletterEmail] = useState("")
   const [propertyAddress, setPropertyAddress] = useState("")
   const [assessmentName, setAssessmentName] = useState("")
-  const [assessmentPhone, setAssessmentPhone] = useState("")
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
-    phone: "",
     service: "",
     message: ""
   })
@@ -62,7 +59,7 @@ export default function HomePage() {
   }
 
   const handlePropertyAssessment = () => {
-    if (!propertyAddress || !assessmentName || !assessmentPhone) {
+    if (!propertyAddress || !assessmentName) {
       toast({
         title: "All Fields Required",
         description: "Please fill in all fields for property assessment.",
@@ -77,11 +74,10 @@ export default function HomePage() {
     })
     setPropertyAddress("")
     setAssessmentName("")
-    setAssessmentPhone("")
   }
 
   const handleContactFormSubmit = () => {
-    if (!contactForm.name || !contactForm.email || !contactForm.phone || !contactForm.message) {
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
       toast({
         title: "Please Fill All Fields",
         description: "All fields are required to send your message.",
@@ -97,7 +93,6 @@ export default function HomePage() {
     setContactForm({
       name: "",
       email: "",
-      phone: "",
       service: "",
       message: ""
     })
@@ -199,44 +194,13 @@ export default function HomePage() {
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Building Dreams,
+              Inspired by you.
               <br />
-              <span className="text-orange-400">Crafting Excellence</span>
+              <span className="text-orange-400">Engineered by us.</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               Premium construction solutions across residential, industrial, and hospitality sectors since 2021
             </p>
-
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-orange-400">25+</div>
-                <div className="text-sm opacity-80">Projects Completed</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-orange-400">2021</div>
-                <div className="text-sm opacity-80">Established</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-orange-400">100%</div>
-                <div className="text-sm opacity-80">Client Satisfaction</div>
-              </motion.div>
-            </div>
 
             {/* CTA Buttons */}
             <motion.div
@@ -431,11 +395,6 @@ export default function HomePage() {
                       value={assessmentName}
                       onChange={(e) => setAssessmentName(e.target.value)}
                     />
-                    <Input 
-                      placeholder="Phone Number" 
-                      value={assessmentPhone}
-                      onChange={(e) => setAssessmentPhone(e.target.value)}
-                    />
                     <Button 
                       className="w-full bg-orange-800 hover:bg-orange-700 text-white"
                       onClick={handlePropertyAssessment}
@@ -509,21 +468,6 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-800">25+</div>
-                  <div className="text-sm text-gray-600">Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-800">4</div>
-                  <div className="text-sm text-gray-600">Years</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-800">100%</div>
-                  <div className="text-sm text-gray-600">Satisfaction</div>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
@@ -587,8 +531,7 @@ export default function HomePage() {
                     <Input placeholder="Your Name" />
                     <Input placeholder="Email Address" type="email" />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input placeholder="Phone Number" type="tel" />
+                  <div className="grid grid-cols-1 gap-4">
                     <Select>
                       <SelectTrigger className="bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500">
                         <SelectValue placeholder="Select Service" />
@@ -627,15 +570,6 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-orange-800 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900">Phone</div>
-                      <div className="text-gray-600">+91 [Phone Number]</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-orange-800 rounded-lg flex items-center justify-center">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -658,10 +592,6 @@ export default function HomePage() {
               <div className="bg-white p-6 rounded-xl shadow-lg">
                 <h4 className="font-semibold text-gray-900 mb-4">Why Choose Ravi Tej Constructions?</h4>
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">25+ Successful Projects</span>
-                  </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />
                     <span className="text-gray-700">Premium Quality Materials</span>

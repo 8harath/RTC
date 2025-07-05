@@ -61,12 +61,6 @@ export default function ContactPage() {
       description: "We'll respond within 24 hours"
     },
     {
-      icon: MapPin,
-      title: "Address",
-      details: ["123 Construction Plaza", "Koramangala, Bangalore - 560034"],
-      description: "Visit our office for consultation"
-    },
-    {
       icon: Clock,
       title: "Working Hours",
       details: ["Monday - Saturday: 9:00 AM - 6:00 PM", "Sunday: By Appointment"],
@@ -326,34 +320,11 @@ export default function ContactPage() {
           </motion.div>
         </div>
 
-        {/* Map Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-16"
-        >
-          <Card className="border-orange-100 overflow-hidden">
-            <CardHeader>
-              <CardTitle className="text-2xl text-gray-900">Visit Our Office</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <MapPin className="w-12 h-12 mx-auto mb-4" />
-                  <p>Interactive Map Coming Soon</p>
-                  <p className="text-sm">123 Construction Plaza, Koramangala, Bangalore - 560034</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
         {/* FAQ Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.3 }}
           className="mt-16"
         >
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Frequently Asked Questions</h2>

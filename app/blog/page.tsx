@@ -247,25 +247,6 @@ export default function BlogPage() {
               "Inspired by you. Engineered by us."
             </p>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest trends, tips, and insights in construction, real estate, and home design from our team of experts.
-          </p>
-          
-          {/* Blog Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-800">{blogPosts.length}+</div>
-              <div className="text-sm text-gray-600">Expert Articles</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-800">{categories.length}</div>
-              <div className="text-sm text-gray-600">Categories</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-800">10k+</div>
-              <div className="text-sm text-gray-600">Monthly Readers</div>
-            </div>
-          </div>
         </motion.div>
 
         {/* Trending Articles */}

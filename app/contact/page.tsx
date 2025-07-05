@@ -18,7 +18,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     projectType: "",
     message: "",
     budget: "",
@@ -41,7 +40,6 @@ export default function ContactPage() {
     setFormData({
       name: "",
       email: "",
-      phone: "",
       projectType: "",
       message: "",
       budget: "",
@@ -56,12 +54,6 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    {
-      icon: Phone,
-      title: "Phone",
-      details: ["+91 98765 43210", "+91 80 2345 6789"],
-      description: "Mon-Sat, 9:00 AM - 6:00 PM"
-    },
     {
       icon: Mail,
       title: "Email",
@@ -174,19 +166,6 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <Input
-                        type="tel"
-                        placeholder="Enter your phone number"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
-                        required
-                        className="border-orange-200 focus:border-orange-500"
-                      />
-                    </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Project Type *
@@ -316,10 +295,6 @@ export default function ContactPage() {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">Need Immediate Assistance?</h3>
                 <div className="space-y-3">
-                  <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
                   <Button variant="outline" className="w-full border-orange-300 text-orange-800 hover:bg-orange-50">
                     <Building className="w-4 h-4 mr-2" />
                     Schedule Site Visit

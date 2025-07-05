@@ -130,8 +130,8 @@ export default function AboutPage() {
                   to our latest developments, we have maintained this core philosophy.
                 </p>
                 <p>
-                  Today, we are proud to have delivered over 25 successful projects, housing 500+ happy 
-                  families, and constructing over 5 million square feet of premium space across various sectors.
+                  Today, we are proud to have delivered successful projects and continue to 
+                  maintain this core philosophy in every structure we build.
                 </p>
               </div>
             </div>

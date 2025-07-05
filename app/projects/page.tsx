@@ -276,34 +276,6 @@ export default function ProjectsPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* Project Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 bg-gradient-to-r from-orange-800 to-orange-700 rounded-2xl p-8 text-white"
-        >
-          <h2 className="text-3xl font-bold text-center mb-8">Project Statistics</h2>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">25+</div>
-              <div className="text-orange-100">Completed Projects</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-orange-100">Happy Families</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">5M+</div>
-              <div className="text-orange-100">Sq Ft Constructed</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <div className="text-orange-100">On-Time Delivery</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </div>
   )

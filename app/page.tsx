@@ -20,6 +20,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { EMICalculator } from "@/components/ui/emi-calculator"
 import Image from "next/image"
 import Link from "next/link"
@@ -544,13 +545,25 @@ export default function HomePage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <Input placeholder="Phone Number" type="tel" />
-                    <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
-                      <option value="">Select Service</option>
-                      <option value="residential">Residential Construction</option>
-                      <option value="industrial">Industrial Construction</option>
-                      <option value="hospitality">Hospitality Construction</option>
-                      <option value="interior">Interior Works</option>
-                    </select>
+                    <Select>
+                      <SelectTrigger className="bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500">
+                        <SelectValue placeholder="Select Service" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white border-gray-200 shadow-lg">
+                        <SelectItem value="residential" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
+                          Residential Construction
+                        </SelectItem>
+                        <SelectItem value="industrial" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
+                          Industrial Construction
+                        </SelectItem>
+                        <SelectItem value="hospitality" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
+                          Hospitality Construction
+                        </SelectItem>
+                        <SelectItem value="interior" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
+                          Interior Works
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                   <Textarea placeholder="Project Details" rows={4} />
                   <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">Send Message</Button>

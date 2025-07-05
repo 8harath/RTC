@@ -32,12 +32,16 @@ Since 2021, RTC has been at the forefront of premium construction solutions, del
 - Smooth animations with Framer Motion
 - Dark/Light theme support
 - Mobile-first approach
+- Improved color contrast for accessibility
+- Enhanced dropdown menus with better visibility
 
 ### 🎨 Component Library
 - Built with Shadcn/UI components
 - Consistent design system
 - Reusable UI components
 - Accessible and modern interface
+- Enhanced Select components with improved contrast
+- Custom EMI Calculator component
 
 ### 🧭 Multi-Page Architecture
 - Dedicated pages for Projects, Properties, About, Contact, and Blog

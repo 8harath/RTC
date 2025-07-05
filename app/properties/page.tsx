@@ -251,10 +251,10 @@ export default function PropertiesPage() {
                         <SelectTrigger className="border-orange-200">
                           <SelectValue placeholder="Any Location" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="">Any Location</SelectItem>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
+                          <SelectItem value="" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">Any Location</SelectItem>
                           {locations.map(location => (
-                            <SelectItem key={location} value={location}>{location}</SelectItem>
+                            <SelectItem key={location} value={location} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">{location}</SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
@@ -266,10 +266,10 @@ export default function PropertiesPage() {
                         <SelectTrigger className="border-orange-200">
                           <SelectValue placeholder="Any Type" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="">Any Type</SelectItem>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
+                          <SelectItem value="" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">Any Type</SelectItem>
                           {propertyTypes.map(type => (
-                            <SelectItem key={type} value={type}>
+                            <SelectItem key={type} value={type} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
                               {type.charAt(0).toUpperCase() + type.slice(1)}
                             </SelectItem>
                           ))}
@@ -283,10 +283,10 @@ export default function PropertiesPage() {
                         <SelectTrigger className="border-orange-200">
                           <SelectValue placeholder="Any BHK" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="">Any BHK</SelectItem>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
+                          <SelectItem value="" className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">Any BHK</SelectItem>
                           {bhkOptions.map(bhk => (
-                            <SelectItem key={bhk} value={bhk}>
+                            <SelectItem key={bhk} value={bhk} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
                               {bhk === "Office" ? "Office Space" : `${bhk} BHK`}
                             </SelectItem>
                           ))}

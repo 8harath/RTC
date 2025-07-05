@@ -195,9 +195,9 @@ export default function ContactPage() {
                         <SelectTrigger className="border-orange-200 focus:border-orange-500">
                           <SelectValue placeholder="Select project type" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
                           {projectTypes.map((type) => (
-                            <SelectItem key={type} value={type}>
+                            <SelectItem key={type} value={type} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
                               {type}
                             </SelectItem>
                           ))}
@@ -215,9 +215,9 @@ export default function ContactPage() {
                         <SelectTrigger className="border-orange-200 focus:border-orange-500">
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
                           {budgetRanges.map((range) => (
-                            <SelectItem key={range} value={range}>
+                            <SelectItem key={range} value={range} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
                               {range}
                             </SelectItem>
                           ))}
@@ -232,9 +232,9 @@ export default function ContactPage() {
                         <SelectTrigger className="border-orange-200 focus:border-orange-500">
                           <SelectValue placeholder="Select timeline" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white border-gray-200 shadow-lg">
                           {timelineOptions.map((option) => (
-                            <SelectItem key={option} value={option}>
+                            <SelectItem key={option} value={option} className="hover:bg-orange-50 focus:bg-orange-50 text-gray-900">
                               {option}
                             </SelectItem>
                           ))}

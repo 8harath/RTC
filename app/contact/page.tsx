@@ -65,7 +65,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@rtconstructions.com", "projects@rtconstructions.com"],
+      details: ["info@ravitejconstructions.com", "projects@ravitejconstructions.com"],
       description: "We'll respond within 24 hours"
     },
     {

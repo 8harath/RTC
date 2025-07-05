@@ -56,7 +56,7 @@ export default function PropertiesPage() {
   const properties = [
     {
       id: 1,
-      title: "RTC Grandeur",
+      title: "Grandeur",
       location: "Whitefield, Bangalore",
       price: 8550000,
       pricePerSqft: 6840,
@@ -70,13 +70,13 @@ export default function PropertiesPage() {
       amenities: ["Swimming Pool", "Gym", "Clubhouse", "Security", "Parking"],
       description: "Luxury 3BHK apartments with premium amenities in prime Whitefield location.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Immediate",
       furnishing: "Semi-Furnished"
     },
     {
       id: 2,
-      title: "RTC Elite",
+      title: "Elite",
       location: "Electronic City, Bangalore",
       price: 12000000,
       pricePerSqft: 7200,
@@ -90,13 +90,13 @@ export default function PropertiesPage() {
       amenities: ["Swimming Pool", "Gym", "Clubhouse", "Security", "Parking", "Garden"],
       description: "Spacious 4BHK apartments with modern amenities in Electronic City.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Mar 2025",
       furnishing: "Unfurnished"
     },
     {
       id: 3,
-      title: "RTC Premium Villas",
+      title: "Premium Villas",
       location: "Sarjapur Road, Bangalore",
       price: 25000000,
       pricePerSqft: 8500,
@@ -110,13 +110,13 @@ export default function PropertiesPage() {
       amenities: ["Private Garden", "Swimming Pool", "Security", "Clubhouse", "Tennis Court"],
       description: "Independent luxury villas with private gardens and premium amenities.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Dec 2025",
       furnishing: "Unfurnished"
     },
     {
       id: 4,
-      title: "RTC Business Park",
+      title: "Business Park",
       location: "Outer Ring Road, Bangalore",
       price: 45000000,
       pricePerSqft: 9000,
@@ -130,13 +130,13 @@ export default function PropertiesPage() {
       amenities: ["Parking", "Security", "Power Backup", "Elevators", "Cafeteria"],
       description: "Prime commercial office space in IT corridor with modern facilities.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Immediate",
       furnishing: "Unfurnished"
     },
     {
       id: 5,
-      title: "RTC Residency",
+      title: "Residency",
       location: "Koramangala, Bangalore",
       price: 9500000,
       pricePerSqft: 7300,
@@ -150,13 +150,13 @@ export default function PropertiesPage() {
       amenities: ["Gym", "Security", "Parking", "Playground", "Garden"],
       description: "Well-designed 3BHK apartments in the heart of Koramangala.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Immediate",
       furnishing: "Semi-Furnished"
     },
     {
       id: 6,
-      title: "RTC Sky Heights",
+      title: "Sky Heights",
       location: "Hebbal, Bangalore",
       price: 7200000,
       pricePerSqft: 6000,
@@ -170,7 +170,7 @@ export default function PropertiesPage() {
       amenities: ["Swimming Pool", "Gym", "Security", "Parking"],
       description: "Affordable 2BHK apartments with good connectivity and amenities.",
       images: ["/placeholder.svg?height=300&width=400"],
-      developer: "RTC Constructions",
+      developer: "Ravi Tej Constructions",
       possession: "Jun 2025",
       furnishing: "Unfurnished"
     }

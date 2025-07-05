@@ -159,7 +159,7 @@ export default function HomePage() {
   const properties = [
     {
       id: 1,
-      title: "RTC Grandeur",
+      title: "Grandeur",
       location: "Whitefield, Bangalore",
       price: "₹85.5 Lakhs",
       pricePerSqft: "₹6,840/sq.ft",
@@ -169,7 +169,7 @@ export default function HomePage() {
     },
     {
       id: 2,
-      title: "RTC Elite",
+      title: "Elite",
       location: "Electronic City, Bangalore",
       price: "₹1.2 Crores",
       pricePerSqft: "₹7,200/sq.ft",
@@ -189,7 +189,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/placeholder.svg?height=1080&width=1920"
-            alt="RTC Construction Site"
+            alt="Ravi Tej Construction Site"
             fill
             className="object-cover"
           />
@@ -489,7 +489,7 @@ export default function HomePage() {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">About Ravi Tej Constructions</h2>
               <p className="text-xl text-gray-600 mb-8">
-                Since 2021, RTC has been at the forefront of premium construction solutions, delivering excellence
+                Since 2021, Ravi Tej Constructions has been at the forefront of premium construction solutions, delivering excellence
                 across residential, industrial, hospitality, and interior design sectors.
               </p>
 
@@ -534,7 +534,7 @@ export default function HomePage() {
             >
               <Image
                 src="/placeholder.svg?height=500&width=600"
-                alt="RTC Team"
+                alt="Ravi Tej Team"
                 width={600}
                 height={500}
                 className="rounded-2xl shadow-2xl"
@@ -640,7 +640,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-gray-600">info@rtconstructions.com</div>
+                      <div className="text-gray-600">info@ravitejconstructions.com</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -656,7 +656,7 @@ export default function HomePage() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h4 className="font-semibold text-gray-900 mb-4">Why Choose RTC?</h4>
+                <h4 className="font-semibold text-gray-900 mb-4">Why Choose Ravi Tej Constructions?</h4>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />

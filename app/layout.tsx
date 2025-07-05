@@ -6,19 +6,22 @@ import { Toaster } from '@/components/ui/toaster'
 import { LoadingProvider } from '@/components/ui/loading-provider'
 
 export const metadata: Metadata = {
-  title: 'RTC Constructions - Premium Construction Company in Bangalore',
+  title: 'Ravi Tej Constructions - Premium Construction Company in Bangalore',
   description: 'Leading construction company in Bangalore specializing in residential, industrial, and hospitality projects since 2021. Quality construction solutions with timely delivery.',
-  keywords: 'construction, bangalore, real estate, residential, industrial, hospitality, interior design, RTC constructions',
-  authors: [{ name: 'RTC Constructions' }],
+  keywords: 'construction, bangalore, real estate, residential, industrial, hospitality, interior design, Ravi Tej constructions',
+  authors: [{ name: 'Ravi Tej Constructions' }],
+  icons: {
+    icon: '/fevicon.jpg',
+  },
   openGraph: {
-    title: 'RTC Constructions - Premium Construction Company',
+    title: 'Ravi Tej Constructions - Premium Construction Company',
     description: 'Quality construction solutions in Bangalore since 2021',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RTC Constructions',
+    title: 'Ravi Tej Constructions',
     description: 'Premium construction solutions in Bangalore',
   },
   robots: {

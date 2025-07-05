@@ -33,16 +33,17 @@ export function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 relative bg-white rounded-lg p-2 shadow-sm">
+            <div className="w-12 h-12 relative bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-2 shadow-lg border border-orange-200">
               <Image
-                src="/RTC Logo_page-0001.jpg"
-                alt="RTC Logo"
+                src="/logo.png"
+                alt="Ravi Tej Constructions Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-xl font-bold text-orange-800">RTC</span>
+            <span className="text-xl font-bold text-orange-800 hidden sm:inline">Ravi Tej Constructions</span>
+            <span className="text-xl font-bold text-orange-800 sm:hidden">RTC</span>
           </Link>
 
           {/* Desktop Navigation */}

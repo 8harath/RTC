@@ -7,7 +7,12 @@ export function LoadingScreen() {
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
       <div className="text-center">
-        {/* Construction Animation */}
+        {/* Company Name - Static, no animation */}
+        <h1 className="text-4xl font-bold text-orange-800 mb-12">
+          Ravi Tej Constructions
+        </h1>
+
+        {/* Construction Animation - Below the text */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -124,7 +129,7 @@ export function LoadingScreen() {
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ 
-                duration: 2.5,
+                duration: 2.0,
                 delay: 2.3,
                 ease: "easeInOut"
               }}

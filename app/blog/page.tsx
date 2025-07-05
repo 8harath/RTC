@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 
@@ -15,6 +16,32 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("")
   const [selectedTag, setSelectedTag] = useState("")
+  const [newsletterEmail, setNewsletterEmail] = useState("")
+  const { toast } = useToast()
+  
+  const handleReadMore = (title: string) => {
+    toast({
+      title: "Article",
+      description: `Full article for "${title}" will be available soon.`,
+    })
+  }
+  
+  const handleNewsletterSubscribe = () => {
+    if (!newsletterEmail) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    toast({
+      title: "Subscribed Successfully!",
+      description: "Thank you for subscribing to our newsletter. You'll receive the latest updates.",
+    })
+    setNewsletterEmail("")
+  }
 
   const blogPosts = [
     {
@@ -280,7 +307,11 @@ export default function BlogPage() {
                           <User className="w-4 h-4 mr-2" />
                           {post.author}
                         </div>
-                        <Button variant="ghost" className="text-orange-800 hover:bg-orange-50 p-0">
+                        <Button 
+                          variant="ghost" 
+                          className="text-orange-800 hover:bg-orange-50 p-0"
+                          onClick={() => handleReadMore(post.title)}
+                        >
                           Read More <ChevronRight className="w-4 h-4 ml-1" />
                         </Button>
                       </div>
@@ -358,7 +389,11 @@ export default function BlogPage() {
                         <User className="w-4 h-4 mr-2" />
                         {post.author}
                       </div>
-                      <Button variant="ghost" className="text-orange-800 hover:bg-orange-50 p-0">
+                      <Button 
+                        variant="ghost" 
+                        className="text-orange-800 hover:bg-orange-50 p-0"
+                        onClick={() => handleReadMore(post.title)}
+                      >
                         Read More <ChevronRight className="w-4 h-4 ml-1" />
                       </Button>
                     </div>
@@ -409,8 +444,13 @@ export default function BlogPage() {
             <Input
               placeholder="Enter your email address"
               className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
             />
-            <Button className="bg-white text-orange-800 hover:bg-gray-100">
+            <Button 
+              className="bg-white text-orange-800 hover:bg-gray-100"
+              onClick={handleNewsletterSubscribe}
+            >
               Subscribe
             </Button>
           </div>

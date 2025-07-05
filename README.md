@@ -1,6 +1,6 @@
 # RTC Construction Company Website
 
-A modern, responsive website for Ravitaj Constructions (RTC), built with Next.js 14, TypeScript, and Tailwind CSS. This website showcases construction projects, property listings, and provides an interactive EMI calculator for potential buyers.
+A modern, responsive website for Ravi Tej Constructions (RTC), built with Next.js 14, TypeScript, and Tailwind CSS. This website showcases construction projects, property listings, and provides an interactive EMI calculator for potential buyers.
 
 ## 🏗️ About RTC
 

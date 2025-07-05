@@ -4,10 +4,20 @@ import { motion } from "framer-motion"
 import { Building, Users, Award, Clock, CheckCircle, Target, Shield, Lightbulb } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
+import Link from "next/link"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 
 export default function AboutPage() {
+  const { toast } = useToast()
+  
+  const handleGetConsultation = () => {
+    toast({
+      title: "Consultation Request",
+      description: "Thank you for your interest! Our team will contact you within 24 hours to schedule your free consultation.",
+    })
+  }
   const milestones = [
     { year: "2021", event: "RTC Founded", description: "Started with a vision to deliver premium construction solutions" },
     { year: "2022", event: "First Major Project", description: "Completed our first industrial manufacturing facility" },
@@ -311,12 +321,18 @@ export default function AboutPage() {
             Let's discuss your construction needs and turn your vision into reality with our expertise and commitment to excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-800 hover:bg-gray-100">
+            <Button 
+              size="lg" 
+              className="bg-white text-orange-800 hover:bg-gray-100"
+              onClick={handleGetConsultation}
+            >
               Get Free Consultation
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-800">
-              View Our Projects
-            </Button>
+            <Link href="/projects">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-800">
+                View Our Projects
+              </Button>
+            </Link>
           </div>
         </motion.section>
       </div>

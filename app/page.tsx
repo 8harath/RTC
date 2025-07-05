@@ -22,11 +22,100 @@ import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { EMICalculator } from "@/components/ui/emi-calculator"
+import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("all")
+  const [newsletterEmail, setNewsletterEmail] = useState("")
+  const [propertyAddress, setPropertyAddress] = useState("")
+  const [assessmentName, setAssessmentName] = useState("")
+  const [assessmentPhone, setAssessmentPhone] = useState("")
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: ""
+  })
+  
+  const { toast } = useToast()
+
+  // Handler functions
+  const handleNewsletterSubscribe = () => {
+    if (!newsletterEmail) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    // Simulate API call
+    toast({
+      title: "Subscribed!",
+      description: "Thank you for subscribing to our newsletter.",
+    })
+    setNewsletterEmail("")
+  }
+
+  const handlePropertyAssessment = () => {
+    if (!propertyAddress || !assessmentName || !assessmentPhone) {
+      toast({
+        title: "All Fields Required",
+        description: "Please fill in all fields for property assessment.",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    toast({
+      title: "Assessment Request Submitted",
+      description: "We'll contact you within 24 hours for property assessment.",
+    })
+    setPropertyAddress("")
+    setAssessmentName("")
+    setAssessmentPhone("")
+  }
+
+  const handleContactFormSubmit = () => {
+    if (!contactForm.name || !contactForm.email || !contactForm.phone || !contactForm.message) {
+      toast({
+        title: "Please Fill All Fields",
+        description: "All fields are required to send your message.",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for your message. We'll get back to you soon.",
+    })
+    setContactForm({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: ""
+    })
+  }
+
+  const handleEnquiry = (propertyName: string) => {
+    toast({
+      title: "Enquiry Sent",
+      description: `Thank you for your interest in ${propertyName}. Our team will contact you soon.`,
+    })
+  }
+
+  const handleTalentNetwork = () => {
+    toast({
+      title: "Interest Recorded",
+      description: "We'll notify you about opportunities in our talent network.",
+    })
+  }
 
   const projects = [
     {
@@ -373,8 +462,15 @@ export default function HomePage() {
                     <Input
                       placeholder="Enter your email address"
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
                     />
-                    <Button className="w-full bg-white text-orange-800 hover:bg-gray-100">Subscribe</Button>
+                    <Button 
+                      className="w-full bg-white text-orange-800 hover:bg-gray-100"
+                      onClick={handleNewsletterSubscribe}
+                    >
+                      Subscribe
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -394,10 +490,27 @@ export default function HomePage() {
                     Get accurate Sub-Registrar value assessment for your property in Bangalore
                   </p>
                   <div className="space-y-4">
-                    <Input placeholder="Property Address" />
-                    <Input placeholder="Your Name" />
-                    <Input placeholder="Phone Number" />
-                    <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">Request Assessment</Button>
+                    <Input 
+                      placeholder="Property Address" 
+                      value={propertyAddress}
+                      onChange={(e) => setPropertyAddress(e.target.value)}
+                    />
+                    <Input 
+                      placeholder="Your Name" 
+                      value={assessmentName}
+                      onChange={(e) => setAssessmentName(e.target.value)}
+                    />
+                    <Input 
+                      placeholder="Phone Number" 
+                      value={assessmentPhone}
+                      onChange={(e) => setAssessmentPhone(e.target.value)}
+                    />
+                    <Button 
+                      className="w-full bg-orange-800 hover:bg-orange-700 text-white"
+                      onClick={handlePropertyAssessment}
+                    >
+                      Request Assessment
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -443,7 +556,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">About Ravitaj Constructions</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">About Ravi Tej Constructions</h2>
               <p className="text-xl text-gray-600 mb-8">
                 Since 2021, RTC has been at the forefront of premium construction solutions, delivering excellence
                 across residential, industrial, hospitality, and interior design sectors.

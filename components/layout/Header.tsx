@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Menu, X, Building } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,8 +33,14 @@ export function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-800 to-orange-600 rounded-lg flex items-center justify-center">
-              <Building className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 relative bg-white rounded-lg p-2 shadow-sm">
+              <Image
+                src="/RTC Logo_page-0001.jpg"
+                alt="RTC Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <span className="text-xl font-bold text-orange-800">RTC</span>
           </Link>

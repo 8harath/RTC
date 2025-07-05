@@ -6,11 +6,21 @@ import { Building, Home, Hotel, Palette, MapPin, Calendar, CheckCircle } from "l
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
+import Link from "next/link"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
+  const { toast } = useToast()
+  
+  const handleViewProjectDetails = (projectTitle: string) => {
+    toast({
+      title: "Project Details",
+      description: `Detailed information for ${projectTitle} will be available soon.`,
+    })
+  }
 
   const projects = [
     {
@@ -186,7 +196,11 @@ export default function ProjectsPage() {
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
+                    <Button 
+                      size="sm" 
+                      className="bg-white text-gray-900 hover:bg-gray-100"
+                      onClick={() => handleViewProjectDetails(project.title)}
+                    >
                       View Details
                     </Button>
                   </div>
@@ -251,7 +265,10 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-orange-800 hover:bg-orange-700 text-white">
+                  <Button 
+                    className="w-full bg-orange-800 hover:bg-orange-700 text-white"
+                    onClick={() => handleViewProjectDetails(project.title)}
+                  >
                     View Project Details
                   </Button>
                 </CardContent>

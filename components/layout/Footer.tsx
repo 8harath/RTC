@@ -1,5 +1,6 @@
 import { Building, Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -10,8 +11,13 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-800 to-orange-600 rounded-lg flex items-center justify-center">
-                <Building className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 relative bg-white rounded-md p-1">
+                <Image
+                  src="/RTC Logo_page-0001.jpg"
+                  alt="RTC Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-lg font-bold">RTC</span>
             </div>

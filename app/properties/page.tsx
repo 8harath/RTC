@@ -11,10 +11,41 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider"
 import { Separator } from "@/components/ui/separator"
 import { EMICalculator } from "@/components/ui/emi-calculator"
+import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
+import Link from "next/link"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 
 export default function PropertiesPage() {
+  const { toast } = useToast()
+  
+  const handleViewDetails = (propertyTitle: string) => {
+    toast({
+      title: "Property Details",
+      description: `Detailed information for ${propertyTitle} will be available soon.`,
+    })
+  }
+  
+  const handleContact = (propertyTitle: string) => {
+    toast({
+      title: "Contact Request",
+      description: `Thank you for your interest in ${propertyTitle}. Our team will contact you soon.`,
+    })
+  }
+  
+  const handlePostRequirements = () => {
+    toast({
+      title: "Requirements Posted",
+      description: "Your property requirements have been submitted. Our team will match properties for you.",
+    })
+  }
+  
+  const handleContactExperts = () => {
+    toast({
+      title: "Expert Contact",
+      description: "Our property experts will contact you within 2 hours to assist with your requirements.",
+    })
+  }
   const [searchTerm, setSearchTerm] = useState("")
   const [priceRange, setPriceRange] = useState([0, 10000000])
   const [selectedLocation, setSelectedLocation] = useState("")
@@ -453,10 +484,17 @@ export default function PropertiesPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-orange-800 hover:bg-orange-700 text-white">
+                    <Button 
+                      className="flex-1 bg-orange-800 hover:bg-orange-700 text-white"
+                      onClick={() => handleViewDetails(property.title)}
+                    >
                       View Details
                     </Button>
-                    <Button variant="outline" className="border-orange-200 text-orange-800 hover:bg-orange-50">
+                    <Button 
+                      variant="outline" 
+                      className="border-orange-200 text-orange-800 hover:bg-orange-50"
+                      onClick={() => handleContact(property.title)}
+                    >
                       Contact
                     </Button>
                   </div>
@@ -515,10 +553,19 @@ export default function PropertiesPage() {
             Let us know your requirements and we'll help you find the perfect property that matches your needs and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-800 hover:bg-gray-100">
+            <Button 
+              size="lg" 
+              className="bg-white text-orange-800 hover:bg-gray-100"
+              onClick={handlePostRequirements}
+            >
               Post Your Requirements
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-800">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white hover:text-orange-800"
+              onClick={handleContactExperts}
+            >
               Contact Our Experts
             </Button>
           </div>
